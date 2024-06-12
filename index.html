@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Login</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://getbootstrap.com/docs/3.3/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <nav>
+                <ul class="nav nav-pills pull-right">
+                    <li role="presentation" class="active"><a href="/">Home</a></li>
+                    <li role="presentation"><a href="/logout" class="btn btn-link pull-right">Sign Out</a></li>
+                </ul>
+            </nav>
+            <h3 class="text-muted">My Login</h3>
+        </div>
+
+        <div class="jumbotron">
+            <p class="lead"></p>
+            <div class="login-form">
+                <form id="loginForm" role="form">
+                    <div class="form-group">
+                        <input type="text" name="user" id="username" class="form-control input-lg" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password">
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <button class="btn btn-lg btn-success btn-block" id="signInButton">Sign In</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; Zafa 2024</p>
+        </footer>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#signInButton").click(function(e) {
+                e.preventDefault();
+                var password = $("#password").val();
+                
+                if (password === 'admin') {
+                    window.location.href = '/flag.html';
+                } else {
+                    window.location.href = '/noflag.html';
+                }
+            });
+
+            $(".close").click(function() {
+                $("#myAlert").alert("close");
+            });
+        });
+    </script>
+</body>
+
+</html>
